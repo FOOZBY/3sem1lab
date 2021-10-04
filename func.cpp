@@ -2,13 +2,13 @@
 
 int get_amout_of_rows(string &prim_file, int n)
 {
-	cout << "Ââåäèòå íàçâàíèå ôàéëà, åñëè îí â äèðåêòîðèè ïðîãðàììû, èíà÷å ââåäèòå ïóòü ê ôàéëó: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ñ„Ð°Ð¹Ð»Ð°, ÐµÑÐ»Ð¸ Ð¾Ð½ Ð² Ð´Ð¸Ñ€ÐµÐºÑ‚Ð¾Ñ€Ð¸Ð¸ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹, Ð¸Ð½Ð°Ñ‡Ðµ Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿ÑƒÑ‚ÑŒ Ðº Ñ„Ð°Ð¹Ð»Ñƒ: ";
 	string temp;
 	while (true)
 	{
 		getline(cin, prim_file);
 		ifstream in;
-		in.open(prim_file); // îêðûâàåì ôàéë äëÿ ÷òåíèÿ
+		in.open(prim_file); // Ð¾ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ñ„Ð°Ð¹Ð» Ð´Ð»Ñ Ñ‡Ñ‚ÐµÐ½Ð¸Ñ
 		if (in.is_open())
 		{
 			while (getline(in,temp))
@@ -19,8 +19,8 @@ int get_amout_of_rows(string &prim_file, int n)
 		}
 		else
 		{
-			cout << "Ôàéë íå ñóùåñòâóåò â óêàçàííîì ìåñòå." << endl;
-			cout << "Óêàæèòå èìÿ/ïóòü ôàéëà êîððåêòíî" << endl;
+			cout << "Ð¤Ð°Ð¹Ð» Ð½Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚ Ð² ÑƒÐºÐ°Ð·Ð°Ð½Ð½Ð¾Ð¼ Ð¼ÐµÑÑ‚Ðµ." << endl;
+			cout << "Ð£ÐºÐ°Ð¶Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ/Ð¿ÑƒÑ‚ÑŒ Ñ„Ð°Ð¹Ð»Ð° ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾" << endl;
 			cin.clear();
 			cin.ignore(32767, '\n');
 		}
@@ -44,12 +44,12 @@ void save_primordial_text_to_arrow(string prim_file, string* text, int n)
 
 void change_primordial_text(string* text,int n)
 {
-	cout << endl << "Èçíà÷àëüíûé òåêñò:" << endl;
+	cout << endl << "Ð˜Ð·Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ñ‹Ð¹ Ñ‚ÐµÐºÑÑ‚:" << endl;
 	for (int i = 0; i < n; i++)
 	{
 		cout << text[i] << endl;
 	}
-	cout << endl << "Èçìåí¸ííûé òåêñò:" << endl;
+	cout << endl << "Ð˜Ð·Ð¼ÐµÐ½Ñ‘Ð½Ð½Ñ‹Ð¹ Ñ‚ÐµÐºÑÑ‚:" << endl;
 	for (int i = 0; i < n; i++)
 	{
 		for (int k = 0; k < text[i].length(); k++)
@@ -68,30 +68,30 @@ void change_primordial_text(string* text,int n)
 
 void save_changed_text(string* text, int n)
 {
-	cout << endl << endl << "Ââåäèòå íàçâàíèå èëè ïóòü ê ôàéëó, â êîòîðîì õîòèòå ñîõðàíèòü ðåçóëüòàò: ";
-	string final_file_place;//êóäà ñîõðàíÿåì èçìåí¸ííûé òåêñò
+	cout << endl << endl << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¸Ð»Ð¸ Ð¿ÑƒÑ‚ÑŒ Ðº Ñ„Ð°Ð¹Ð»Ñƒ, Ð² ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð¼ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑÐ¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚: ";
+	string final_file_place;//ÐºÑƒÐ´Ð° ÑÐ¾Ñ…Ñ€Ð°Ð½ÑÐµÐ¼ Ð¸Ð·Ð¼ÐµÐ½Ñ‘Ð½Ð½Ñ‹Ð¹ Ñ‚ÐµÐºÑÑ‚
 	while (true)
 	{
 		getline(cin, final_file_place);
 		ofstream out;
-		out.open(final_file_place); // îêðûâàåì ôàéë äëÿ çàïèñè
+		out.open(final_file_place); // Ð¾ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ñ„Ð°Ð¹Ð» Ð´Ð»Ñ Ð·Ð°Ð¿Ð¸ÑÐ¸
 		if (out.is_open())
 		{
 			for (int i = 0; i < n; i++)
 			{
 				out << text[i] << '\n';
 			}
-			cout << endl << "Ðåçóëüòàò ñîõðàí¸í" << endl << endl;
+			cout << endl << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ ÑÐ¾Ñ…Ñ€Ð°Ð½Ñ‘Ð½" << endl << endl;
 			break;
 		}
 		else
 		{
-			cout << "Âû íåïðàâèëüíî óêàçàëè ïóòü ê ôàéëó èëè/è íå óêàçàëè èìÿ ôàéëà. Óêàæèòå ïóòü è èìÿ ôàéëà çàíîâî" << endl;
+			cout << "Ð’Ñ‹ Ð½ÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾ ÑƒÐºÐ°Ð·Ð°Ð»Ð¸ Ð¿ÑƒÑ‚ÑŒ Ðº Ñ„Ð°Ð¹Ð»Ñƒ Ð¸Ð»Ð¸/Ð¸ Ð½Ðµ ÑƒÐºÐ°Ð·Ð°Ð»Ð¸ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð°. Ð£ÐºÐ°Ð¶Ð¸Ñ‚Ðµ Ð¿ÑƒÑ‚ÑŒ Ð¸ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð° Ð·Ð°Ð½Ð¾Ð²Ð¾" << endl;
 			cin.clear();
 			cin.ignore(32767, '\n');
 		}
 		cin.seekg(0, ios::end);
 		cin.clear();
-		out.close();// çàêðûâàåì ôàéë
+		out.close();// Ð·Ð°ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ñ„Ð°Ð¹Ð»
 	}
 };
